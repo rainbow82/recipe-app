@@ -101,14 +101,14 @@ class Recipe
         return $this->tags;
     }
 
-    public function setYeild($yeild)
+    public function setYield($yield)
     {
-        $this->yeild = $yeild;
+        $this->yield = $yield;
     }
 
-    public function getYeild()
+    public function getYield()
     {
-        return $this->yeild;
+        return $this->yield;
     }
 
     public function setSource($source)

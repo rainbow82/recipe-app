@@ -31,7 +31,7 @@ class Render
         $output .= "\n";
         $output .= implode("\n", $recipe->getInstructions());
         $output .= "\n";
-        $output .= $recipe->getYeild();
+        $output .= $recipe->getYield();
         $output .= "\n";
         return $output;
     }
