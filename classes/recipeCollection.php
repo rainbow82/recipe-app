@@ -34,6 +34,28 @@ class RecipeCollection
         return $this->recipe;
     }
 
+    public function getRecipeTitles()
+    {
+        $titles = array();
+        foreach ($this->recipes as $recipe) {
+            $titles[] = $recipe->getTitle();
+        }
+
+        return $titles;
+    }
+
+    public function filterByTag($tag)
+    {
+        $taggedRecipes = array();
+        foreach ($this->recipes as $recipe) {
+            if(in_array(strtolower($tag), $recipe->getTags()))
+            {
+                $taggedRecipes[] = $recipe;
+            }
+        }
+        return $taggedRecipes;
+    }
+
 }
 
 

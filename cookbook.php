@@ -25,6 +25,13 @@ $cookbook->addRecipe($granola);
 $cookbook->addRecipe($spicy_omelette);
 $cookbook->addRecipe($scones);
 
+$breakfast = new RecipeCollection("Favorite Breakfast Recipes");
+foreach ($cookbook->filterByTag('breakfast') as $recipe) {
+    $breakfast->addRecipe($recipe);
+}
+
+echo Render::listRecipes($breakfast->getRecipeTitles());
+
 // $recipe1 = new Recipe("my first recipe");
 
 //referece the class properties ->
@@ -48,7 +55,7 @@ $cookbook->addRecipe($scones);
 // echo $recipe1;
 
 //calling a static method outside it's class
-echo Render::displayRecipe($belgian_waffles);
+//echo Render::displayRecipe($belgian_waffles);
 
 
 ?>
