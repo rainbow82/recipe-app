@@ -9,6 +9,14 @@ class Render
         return $output;
     }
 
+    public static function listShopping($ingredient_list)
+    {
+        //sort on the key
+        ksort($ingredient_list);
+        //return the keys
+        return implode("\n", array_keys($ingredient_list));
+    }
+
     public static function listIngredients($ingredients)
     {
         $output = "";

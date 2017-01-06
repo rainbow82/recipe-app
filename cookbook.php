@@ -30,7 +30,10 @@ foreach ($cookbook->filterByTag('breakfast') as $recipe) {
     $breakfast->addRecipe($recipe);
 }
 
-echo Render::listRecipes($breakfast->getRecipeTitles());
+//echo Render::listRecipes($breakfast->getRecipeTitles());
+
+echo "\n\nSHOPPING LIST\n\n";
+echo Render::listShopping($breakfast->getCombinedIngredients());
 
 // $recipe1 = new Recipe("my first recipe");
 
