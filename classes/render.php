@@ -13,8 +13,10 @@ class Render
     {
         //sort on the key
         ksort($ingredient_list);
+
         //return the keys
         return implode("\n", array_keys($ingredient_list));
+
     }
 
     public static function listIngredients($ingredients)
@@ -30,7 +32,15 @@ class Render
     public static function listRecipes($titles)
     {
         asort($titles);
-        return implode("\n", $titles);
+        $output = "";
+        foreach ($titles as $key => $title) {
+            if($output != "")
+            {
+                $output .= "\n";
+            }
+            $output .= "[$key] $title";
+        }
+        return $output;
     }
 
     public static function displayRecipe($recipe)
